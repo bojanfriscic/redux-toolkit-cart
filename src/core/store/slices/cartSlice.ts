@@ -40,9 +40,8 @@ const cartSlice = createSlice({
         updateQuantity: ({ data }, { payload }: PayloadAction<IUpdatePayload>) => {
             const { id, quantity } = payload;
 
-            if (quantity < 1) {
+            if (quantity > 1) {
                 const index = data.findIndex(item => item.id === id);
-
                 if (index !== -1) {
                     data[index].quantity = quantity;
                 }
@@ -52,7 +51,6 @@ const cartSlice = createSlice({
             state.data = [];
         },
         setMessage: (state, { payload }: PayloadAction<string>) => {
-            console.log(state.message, payload)
             state.message = payload;
         }
     }
