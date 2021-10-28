@@ -1,0 +1,6 @@
+.quantityForm {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 0.5rem;
+    max-width: 9.5rem;
+}
